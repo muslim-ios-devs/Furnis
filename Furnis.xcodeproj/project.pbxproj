@@ -21,6 +21,7 @@
 		98A2250D29BF653E00695A71 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 98A2250C29BF653E00695A71 /* SnapKit */; };
 		98A2251029BF886300695A71 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2250F29BF886300695A71 /* UIColor+Extension.swift */; };
 		98A2251229BF887700695A71 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2251129BF887700695A71 /* UILabel+Extension.swift */; };
+		98BD058F29BFA22F008AA6DB /* AnimateableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BD058E29BFA22F008AA6DB /* AnimateableButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		98A2250929BF629700695A71 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		98A2250F29BF886300695A71 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		98A2251129BF887700695A71 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		98BD058E29BFA22F008AA6DB /* AnimateableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateableButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				98A224FE29BF345000695A71 /* App */,
 				98A2250E29BF849D00695A71 /* Extensions */,
+				98BD058D29BFA1E6008AA6DB /* Components */,
 				98A224FF29BF346200695A71 /* Resources */,
 				98A2250029BF347F00695A71 /* Screens */,
 				98A2250129BF349300695A71 /* Services */,
@@ -187,6 +190,14 @@
 				98A2251129BF887700695A71 /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		98BD058D29BFA1E6008AA6DB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				98BD058E29BFA22F008AA6DB /* AnimateableButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +340,7 @@
 				98A2251029BF886300695A71 /* UIColor+Extension.swift in Sources */,
 				98A2250329BF40ED00695A71 /* AppCoordinator.swift in Sources */,
 				98A2250629BF41B700695A71 /* OnboardingViewController.swift in Sources */,
+				98BD058F29BFA22F008AA6DB /* AnimateableButton.swift in Sources */,
 				98A2250829BF433200695A71 /* OnboardingPresenter.swift in Sources */,
 				98A2250A29BF629700695A71 /* OnboardingView.swift in Sources */,
 				98A224CF29BF2C2F00695A71 /* AppDelegate.swift in Sources */,

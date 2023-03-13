@@ -60,8 +60,8 @@ final class OnboardingView: UIView {
         return control
     }()
     
-    private let startButton: UIButton = {
-        let button = UIButton()
+    private let startButton: AnimateableButton = {
+        let button = AnimateableButton()
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.1
         let attributes: [NSAttributedString.Key: Any] = [
@@ -143,8 +143,6 @@ final class OnboardingView: UIView {
     }
     
     private func setupStartButton() {
-        startButton.addTarget(self, action: #selector(startButtonTouchedUpInside), for: [.touchDown])
-        startButton.addTarget(self, action: #selector(startButtonTouchedDragExit), for: [.touchDragExit, .touchCancel, .touchUpInside, .touchUpOutside])
         addSubview(startButton)
         startButton.snp.makeConstraints { make in
             make.height.equalTo(50)
@@ -178,17 +176,7 @@ final class OnboardingView: UIView {
         }
     }
     
-    @objc private func startButtonTouchedUpInside() {
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 5, options: [.curveEaseInOut]) {
-            self.startButton.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        }
-    }
     
-    @objc private func startButtonTouchedDragExit() {
-        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 5, options: [.curveEaseInOut]) {
-            self.startButton.transform = .identity
-        }
-    }
     
     private func updateDescription() {
         UIView.transition(with: descriptionLabel, duration: 0.3, options: [.transitionCrossDissolve]) {
