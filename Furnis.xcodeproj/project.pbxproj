@@ -17,6 +17,10 @@
 		98A2250329BF40ED00695A71 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2250229BF40ED00695A71 /* AppCoordinator.swift */; };
 		98A2250629BF41B700695A71 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2250529BF41B700695A71 /* OnboardingViewController.swift */; };
 		98A2250829BF433200695A71 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2250729BF433200695A71 /* OnboardingPresenter.swift */; };
+		98A2250A29BF629700695A71 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2250929BF629700695A71 /* OnboardingView.swift */; };
+		98A2250D29BF653E00695A71 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 98A2250C29BF653E00695A71 /* SnapKit */; };
+		98A2251029BF886300695A71 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2250F29BF886300695A71 /* UIColor+Extension.swift */; };
+		98A2251229BF887700695A71 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2251129BF887700695A71 /* UILabel+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,9 @@
 		98A2250229BF40ED00695A71 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		98A2250529BF41B700695A71 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		98A2250729BF433200695A71 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
+		98A2250929BF629700695A71 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		98A2250F29BF886300695A71 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		98A2251129BF887700695A71 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A2250D29BF653E00695A71 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				98A224FE29BF345000695A71 /* App */,
+				98A2250E29BF849D00695A71 /* Extensions */,
 				98A224FF29BF346200695A71 /* Resources */,
 				98A2250029BF347F00695A71 /* Screens */,
 				98A2250129BF349300695A71 /* Services */,
@@ -166,8 +175,18 @@
 			children = (
 				98A2250529BF41B700695A71 /* OnboardingViewController.swift */,
 				98A2250729BF433200695A71 /* OnboardingPresenter.swift */,
+				98A2250929BF629700695A71 /* OnboardingView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		98A2250E29BF849D00695A71 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				98A2250F29BF886300695A71 /* UIColor+Extension.swift */,
+				98A2251129BF887700695A71 /* UILabel+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +205,9 @@
 			dependencies = (
 			);
 			name = Furnis;
+			packageProductDependencies = (
+				98A2250C29BF653E00695A71 /* SnapKit */,
+			);
 			productName = Furnis;
 			productReference = 98A224CB29BF2C2F00695A71 /* Furnis.app */;
 			productType = "com.apple.product-type.application";
@@ -258,6 +280,9 @@
 				Base,
 			);
 			mainGroup = 98A224C229BF2C2F00695A71;
+			packageReferences = (
+				98A2250B29BF653E00695A71 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 98A224CC29BF2C2F00695A71 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -300,9 +325,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A2251229BF887700695A71 /* UILabel+Extension.swift in Sources */,
+				98A2251029BF886300695A71 /* UIColor+Extension.swift in Sources */,
 				98A2250329BF40ED00695A71 /* AppCoordinator.swift in Sources */,
 				98A2250629BF41B700695A71 /* OnboardingViewController.swift in Sources */,
 				98A2250829BF433200695A71 /* OnboardingPresenter.swift in Sources */,
+				98A2250A29BF629700695A71 /* OnboardingView.swift in Sources */,
 				98A224CF29BF2C2F00695A71 /* AppDelegate.swift in Sources */,
 				98A224D129BF2C2F00695A71 /* SceneDelegate.swift in Sources */,
 			);
@@ -630,6 +658,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		98A2250B29BF653E00695A71 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		98A2250C29BF653E00695A71 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98A2250B29BF653E00695A71 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 98A224C329BF2C2F00695A71 /* Project object */;
 }
