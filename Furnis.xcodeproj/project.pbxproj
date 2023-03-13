@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		98A224CF29BF2C2F00695A71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A224CE29BF2C2F00695A71 /* AppDelegate.swift */; };
 		98A224D129BF2C2F00695A71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A224D029BF2C2F00695A71 /* SceneDelegate.swift */; };
-		98A224D329BF2C2F00695A71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A224D229BF2C2F00695A71 /* ViewController.swift */; };
-		98A224D629BF2C2F00695A71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A224D429BF2C2F00695A71 /* Main.storyboard */; };
 		98A224D829BF2C3100695A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A224D729BF2C3100695A71 /* Assets.xcassets */; };
 		98A224DB29BF2C3100695A71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A224D929BF2C3100695A71 /* LaunchScreen.storyboard */; };
 		98A224E629BF2C3100695A71 /* FurnisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A224E529BF2C3100695A71 /* FurnisTests.swift */; };
 		98A224F029BF2C3100695A71 /* FurnisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A224EF29BF2C3100695A71 /* FurnisUITests.swift */; };
 		98A224F229BF2C3100695A71 /* FurnisUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A224F129BF2C3100695A71 /* FurnisUITestsLaunchTests.swift */; };
+		98A2250329BF40ED00695A71 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2250229BF40ED00695A71 /* AppCoordinator.swift */; };
+		98A2250629BF41B700695A71 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2250529BF41B700695A71 /* OnboardingViewController.swift */; };
+		98A2250829BF433200695A71 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2250729BF433200695A71 /* OnboardingPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +40,6 @@
 		98A224CB29BF2C2F00695A71 /* Furnis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Furnis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A224CE29BF2C2F00695A71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98A224D029BF2C2F00695A71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		98A224D229BF2C2F00695A71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		98A224D529BF2C2F00695A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98A224D729BF2C3100695A71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98A224DA29BF2C3100695A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98A224DC29BF2C3100695A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +48,9 @@
 		98A224EB29BF2C3100695A71 /* FurnisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FurnisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A224EF29BF2C3100695A71 /* FurnisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnisUITests.swift; sourceTree = "<group>"; };
 		98A224F129BF2C3100695A71 /* FurnisUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnisUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		98A2250229BF40ED00695A71 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		98A2250529BF41B700695A71 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		98A2250729BF433200695A71 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +101,10 @@
 		98A224CD29BF2C2F00695A71 /* Furnis */ = {
 			isa = PBXGroup;
 			children = (
-				98A224CE29BF2C2F00695A71 /* AppDelegate.swift */,
-				98A224D029BF2C2F00695A71 /* SceneDelegate.swift */,
-				98A224D229BF2C2F00695A71 /* ViewController.swift */,
-				98A224D429BF2C2F00695A71 /* Main.storyboard */,
-				98A224D729BF2C3100695A71 /* Assets.xcassets */,
-				98A224D929BF2C3100695A71 /* LaunchScreen.storyboard */,
-				98A224DC29BF2C3100695A71 /* Info.plist */,
+				98A224FE29BF345000695A71 /* App */,
+				98A224FF29BF346200695A71 /* Resources */,
+				98A2250029BF347F00695A71 /* Screens */,
+				98A2250129BF349300695A71 /* Services */,
 			);
 			path = Furnis;
 			sourceTree = "<group>";
@@ -125,6 +124,50 @@
 				98A224F129BF2C3100695A71 /* FurnisUITestsLaunchTests.swift */,
 			);
 			path = FurnisUITests;
+			sourceTree = "<group>";
+		};
+		98A224FE29BF345000695A71 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				98A224CE29BF2C2F00695A71 /* AppDelegate.swift */,
+				98A224D029BF2C2F00695A71 /* SceneDelegate.swift */,
+				98A2250229BF40ED00695A71 /* AppCoordinator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		98A224FF29BF346200695A71 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				98A224D929BF2C3100695A71 /* LaunchScreen.storyboard */,
+				98A224D729BF2C3100695A71 /* Assets.xcassets */,
+				98A224DC29BF2C3100695A71 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		98A2250029BF347F00695A71 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				98A2250429BF419D00695A71 /* Onboarding */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		98A2250129BF349300695A71 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		98A2250429BF419D00695A71 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				98A2250529BF41B700695A71 /* OnboardingViewController.swift */,
+				98A2250729BF433200695A71 /* OnboardingPresenter.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +276,6 @@
 			files = (
 				98A224DB29BF2C3100695A71 /* LaunchScreen.storyboard in Resources */,
 				98A224D829BF2C3100695A71 /* Assets.xcassets in Resources */,
-				98A224D629BF2C2F00695A71 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +300,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98A224D329BF2C2F00695A71 /* ViewController.swift in Sources */,
+				98A2250329BF40ED00695A71 /* AppCoordinator.swift in Sources */,
+				98A2250629BF41B700695A71 /* OnboardingViewController.swift in Sources */,
+				98A2250829BF433200695A71 /* OnboardingPresenter.swift in Sources */,
 				98A224CF29BF2C2F00695A71 /* AppDelegate.swift in Sources */,
 				98A224D129BF2C2F00695A71 /* SceneDelegate.swift in Sources */,
 			);
@@ -297,14 +341,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		98A224D429BF2C2F00695A71 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				98A224D529BF2C2F00695A71 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		98A224D929BF2C3100695A71 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -438,10 +474,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Furnis/Info.plist;
+				INFOPLIST_FILE = Furnis/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -465,10 +500,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Furnis/Info.plist;
+				INFOPLIST_FILE = Furnis/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
