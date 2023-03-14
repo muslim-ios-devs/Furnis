@@ -11,19 +11,16 @@ private extension TimeInterval {
     static let animation250ms: TimeInterval = 0.25
 }
 
-private extension UIColor {
-    static let inactive: UIColor = .gray
-}
-
 private enum Constants {
-    static let offset: CGFloat = 10
-    static let placeholderSize: CGFloat = 14
+    static let offset: CGFloat = 8
+    static let placeholderSize: CGFloat = 12
 }
 
 final class AnimateableTextField: UITextField {
     
     // MARK: - Subviews
-    private var label = UILabel()
+    private let label = UILabel()
+    private let borderView = UIView()
     
     // MARK: - Private Properties
     private var scale: CGFloat {
@@ -68,7 +65,17 @@ final class AnimateableTextField: UITextField {
     
     override var placeholder: String? {
         didSet {
-            label.text = placeholder
+            guard let placeholder = placeholder else { return }
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineHeightMultiple = 1.1
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.systemFont(ofSize: 16),
+                .paragraphStyle: paragraphStyle,
+                .foregroundColor: UIColor.main.withAlphaComponent(0.6)
+            ]
+            label.attributedText = NSAttributedString(
+                string: placeholder.uppercased(), attributes: attributes
+            )
         }
     }
     
@@ -97,18 +104,26 @@ final class AnimateableTextField: UITextField {
         }
         
         label.transform = .identity
-        label.frame = bounds.inset(by: textInsets)
+        label.sizeToFit()
+        label.frame = CGRect(x: 10, y: 0, width: label.frame.width, height: label.frame.height)
+        label.center.y = borderView.center.y
     }
     
     // MARK: - Private Methods
     private func setupUI() {
         borderStyle = .none
+        font = UIFont.systemFont(ofSize: 16, weight: .medium)
         
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.main.withAlphaComponent(0.6).cgColor
-        layer.cornerRadius = 5
+        borderView.frame = bounds
+        borderView.layer.borderColor = UIColor.main.withAlphaComponent(0.6).cgColor
+        borderView.layer.borderWidth = 1
+        borderView.layer.cornerRadius = 5
+        borderView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        borderView.isUserInteractionEnabled = false
+        addSubview(borderView)
         
-        label.textColor = .inactive
+        label.backgroundColor = .white
+        label.textColor = UIColor.main.withAlphaComponent(0.6)
         label.font = font
         label.text = placeholder
         label.isUserInteractionEnabled = false
@@ -117,16 +132,15 @@ final class AnimateableTextField: UITextField {
         addTarget(self, action: #selector(handleEditing), for: .allEditingEvents)
     }
     
-    @objc
-    private func handleEditing() {
+    @objc private func handleEditing() {
         updateLabel()
         updateBorder()
     }
     
     private func updateBorder() {
-        let borderColor = isFirstResponder ? tintColor : .inactive
+        let borderColor: UIColor = isFirstResponder ? .main : .main.withAlphaComponent(0.6)
         UIView.animate(withDuration: .animation250ms) {
-            self.layer.borderColor = borderColor?.cgColor
+            self.layer.borderColor = borderColor.cgColor
         }
     }
     
@@ -136,7 +150,7 @@ final class AnimateableTextField: UITextField {
         let offsetX = -label.bounds.width * (1 - scale) / 2
         let offsetY = -label.bounds.height * (1 - scale) / 2
         
-        let transform = CGAffineTransform(translationX: offsetX, y: offsetY - Constants.offset - 4)
+        let transform = CGAffineTransform(translationX: offsetX, y: offsetY - labelHeight - Constants.offset)
             .scaledBy(x: scale, y: scale)
         
         guard animated else {
