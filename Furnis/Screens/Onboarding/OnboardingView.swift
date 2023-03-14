@@ -10,6 +10,8 @@ import SnapKit
 
 final class OnboardingView: UIView {
 
+    var startButtonTappedClosure: (() -> Void)?
+    
     private let descriptions: [String] = [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu.",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur commodo.",
@@ -143,6 +145,7 @@ final class OnboardingView: UIView {
     }
     
     private func setupStartButton() {
+        startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         addSubview(startButton)
         startButton.snp.makeConstraints { make in
             make.height.equalTo(50)
@@ -170,7 +173,9 @@ final class OnboardingView: UIView {
         }
     }
     
-    
+    @objc private func startButtonTapped() {
+        startButtonTappedClosure?()
+    }
     
     private func updateDescription() {
         UIView.transition(with: descriptionLabel, duration: 0.3, options: [.transitionCrossDissolve]) {

@@ -25,6 +25,10 @@ final class OnboardingViewController: UIViewController {
     
     override func loadView() {
         view = onboardingView
+        onboardingView.startButtonTappedClosure = { [weak self] in
+            let authVC = AuthViewController()
+            self?.navigationController?.pushViewController(authVC, animated: true)
+        }
     }
     
     override func viewDidLoad() {

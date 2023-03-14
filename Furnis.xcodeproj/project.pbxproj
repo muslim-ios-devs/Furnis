@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		981048C429C0954900BE6A31 /* AnimateableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981048C329C0954900BE6A31 /* AnimateableTextField.swift */; };
 		98A224CF29BF2C2F00695A71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A224CE29BF2C2F00695A71 /* AppDelegate.swift */; };
 		98A224D129BF2C2F00695A71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A224D029BF2C2F00695A71 /* SceneDelegate.swift */; };
 		98A224D829BF2C3100695A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A224D729BF2C3100695A71 /* Assets.xcassets */; };
@@ -22,6 +23,9 @@
 		98A2251029BF886300695A71 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2250F29BF886300695A71 /* UIColor+Extension.swift */; };
 		98A2251229BF887700695A71 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2251129BF887700695A71 /* UILabel+Extension.swift */; };
 		98BD058F29BFA22F008AA6DB /* AnimateableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BD058E29BFA22F008AA6DB /* AnimateableButton.swift */; };
+		98BD059229C03ECA008AA6DB /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BD059129C03ECA008AA6DB /* AuthViewController.swift */; };
+		98BD059429C03EDB008AA6DB /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BD059329C03EDB008AA6DB /* AuthView.swift */; };
+		98BD059629C03EF0008AA6DB /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BD059529C03EF0008AA6DB /* AuthPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		981048C329C0954900BE6A31 /* AnimateableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateableTextField.swift; sourceTree = "<group>"; };
 		98A224CB29BF2C2F00695A71 /* Furnis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Furnis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A224CE29BF2C2F00695A71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98A224D029BF2C2F00695A71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +65,9 @@
 		98A2250F29BF886300695A71 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		98A2251129BF887700695A71 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		98BD058E29BFA22F008AA6DB /* AnimateableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateableButton.swift; sourceTree = "<group>"; };
+		98BD059129C03ECA008AA6DB /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		98BD059329C03EDB008AA6DB /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		98BD059529C03EF0008AA6DB /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,7 @@
 		98A2250029BF347F00695A71 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				98BD059029C03DF8008AA6DB /* Auth */,
 				98A2250429BF419D00695A71 /* Onboarding */,
 			);
 			path = Screens;
@@ -196,8 +205,19 @@
 			isa = PBXGroup;
 			children = (
 				98BD058E29BFA22F008AA6DB /* AnimateableButton.swift */,
+				981048C329C0954900BE6A31 /* AnimateableTextField.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		98BD059029C03DF8008AA6DB /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				98BD059129C03ECA008AA6DB /* AuthViewController.swift */,
+				98BD059529C03EF0008AA6DB /* AuthPresenter.swift */,
+				98BD059329C03EDB008AA6DB /* AuthView.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,12 +358,16 @@
 			files = (
 				98A2251229BF887700695A71 /* UILabel+Extension.swift in Sources */,
 				98A2251029BF886300695A71 /* UIColor+Extension.swift in Sources */,
+				98BD059229C03ECA008AA6DB /* AuthViewController.swift in Sources */,
 				98A2250329BF40ED00695A71 /* AppCoordinator.swift in Sources */,
+				98BD059629C03EF0008AA6DB /* AuthPresenter.swift in Sources */,
 				98A2250629BF41B700695A71 /* OnboardingViewController.swift in Sources */,
 				98BD058F29BFA22F008AA6DB /* AnimateableButton.swift in Sources */,
 				98A2250829BF433200695A71 /* OnboardingPresenter.swift in Sources */,
+				981048C429C0954900BE6A31 /* AnimateableTextField.swift in Sources */,
 				98A2250A29BF629700695A71 /* OnboardingView.swift in Sources */,
 				98A224CF29BF2C2F00695A71 /* AppDelegate.swift in Sources */,
+				98BD059429C03EDB008AA6DB /* AuthView.swift in Sources */,
 				98A224D129BF2C2F00695A71 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
