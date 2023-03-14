@@ -140,7 +140,7 @@ final class AnimateableTextField: UITextField {
     private func updateBorder() {
         let borderColor: UIColor = isFirstResponder ? .main : .main.withAlphaComponent(0.6)
         UIView.animate(withDuration: .animation250ms) {
-            self.layer.borderColor = borderColor.cgColor
+            self.borderView.layer.borderColor = borderColor.cgColor
         }
     }
     
