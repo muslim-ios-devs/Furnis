@@ -56,7 +56,6 @@ final class OnboardingView: UIView {
         control.numberOfPages = 3
         control.allowsContinuousInteraction = false
         control.backgroundStyle = .minimal
-        control.addTarget(self, action: #selector(sliderControlChanged), for: .valueChanged)
         return control
     }()
     
@@ -135,6 +134,7 @@ final class OnboardingView: UIView {
     }
     
     private func setupSliderControl() {
+        sliderControl.addTarget(self, action: #selector(sliderControlChanged), for: .valueChanged)
         addSubview(sliderControl)
         sliderControl.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(28)
