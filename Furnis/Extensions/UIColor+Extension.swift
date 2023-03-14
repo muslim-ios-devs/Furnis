@@ -15,4 +15,8 @@ extension UIColor {
     class var secondary: UIColor {
         UIColor(named: "secondary")!
     }
+    
+    class var lineColor: UIColor {
+        UIColor(named: "lineColor")!
+    }
 }
