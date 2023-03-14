@@ -152,20 +152,14 @@ final class OnboardingView: UIView {
     }
     
     @objc private func swipedLeft() {
-        if selectedDescriptionIndex + 1 > descriptions.count - 1 {
-            selectedDescriptionIndex = 0
-        } else {
-            selectedDescriptionIndex += 1
-        }
+        let isLast = selectedDescriptionIndex + 1 >= descriptions.count
+        selectedDescriptionIndex = isLast ? 0 : selectedDescriptionIndex + 1
         updateDescription()
     }
     
     @objc private func swipedRight() {
-        if selectedDescriptionIndex - 1 < 0 {
-            selectedDescriptionIndex = descriptions.count - 1
-        } else {
-            selectedDescriptionIndex -= 1
-        }
+        let isFirst = selectedDescriptionIndex - 1 < 0
+        selectedDescriptionIndex = isFirst ? descriptions.count - 1 : selectedDescriptionIndex - 1
         updateDescription()
     }
     
