@@ -20,7 +20,8 @@ final class AppCoordinator: NSObject {
     private func startScreenFlow() {
         let onboardingVC = OnboardingViewController(presenter: OnboardingPresenter())
         let navigationController = UINavigationController(rootViewController: onboardingVC)
-        window.rootViewController = navigationController
+//        window.rootViewController = navigationController
+        window.rootViewController = TabBarController()
         window.makeKeyAndVisible()
     }
 }
