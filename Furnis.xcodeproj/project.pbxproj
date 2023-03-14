@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		981048C429C0954900BE6A31 /* AnimateableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981048C329C0954900BE6A31 /* AnimateableTextField.swift */; };
+		7FDB3F7429C05C750020868A /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB3F7329C05C750020868A /* MainPageController.swift */; };
+		7FDB3F7629C05C840020868A /* MainPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB3F7529C05C840020868A /* MainPagePresenter.swift */; };
+		7FDB3F7829C05C8D0020868A /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB3F7729C05C8D0020868A /* MainPageView.swift */; };
+		7FDB3F7A29C05CB00020868A /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB3F7929C05CB00020868A /* TabbarController.swift */; };
+		7FDB3F7C29C0746E0020868A /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB3F7B29C0746E0020868A /* NavigationBar.swift */; };
 		98A224CF29BF2C2F00695A71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A224CE29BF2C2F00695A71 /* AppDelegate.swift */; };
 		98A224D129BF2C2F00695A71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A224D029BF2C2F00695A71 /* SceneDelegate.swift */; };
 		98A224D829BF2C3100695A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A224D729BF2C3100695A71 /* Assets.xcassets */; };
@@ -47,6 +52,11 @@
 
 /* Begin PBXFileReference section */
 		981048C329C0954900BE6A31 /* AnimateableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateableTextField.swift; sourceTree = "<group>"; };
+		7FDB3F7329C05C750020868A /* MainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageController.swift; sourceTree = "<group>"; };
+		7FDB3F7529C05C840020868A /* MainPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPagePresenter.swift; sourceTree = "<group>"; };
+		7FDB3F7729C05C8D0020868A /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		7FDB3F7929C05CB00020868A /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		7FDB3F7B29C0746E0020868A /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		98A224CB29BF2C2F00695A71 /* Furnis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Furnis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A224CE29BF2C2F00695A71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98A224D029BF2C2F00695A71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +106,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7FDB3F7229C05C510020868A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7FDB3F7329C05C750020868A /* MainPageController.swift */,
+				7FDB3F7529C05C840020868A /* MainPagePresenter.swift */,
+				7FDB3F7729C05C8D0020868A /* MainPageView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		98A224C229BF2C2F00695A71 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +172,7 @@
 				98A224CE29BF2C2F00695A71 /* AppDelegate.swift */,
 				98A224D029BF2C2F00695A71 /* SceneDelegate.swift */,
 				98A2250229BF40ED00695A71 /* AppCoordinator.swift */,
+				7FDB3F7929C05CB00020868A /* TabbarController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -171,6 +192,7 @@
 			children = (
 				98BD059029C03DF8008AA6DB /* Auth */,
 				98A2250429BF419D00695A71 /* Onboarding */,
+				7FDB3F7229C05C510020868A /* Main */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -206,6 +228,7 @@
 			children = (
 				98BD058E29BFA22F008AA6DB /* AnimateableButton.swift */,
 				981048C329C0954900BE6A31 /* AnimateableTextField.swift */,
+				7FDB3F7B29C0746E0020868A /* NavigationBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -359,13 +382,18 @@
 				98A2251229BF887700695A71 /* UILabel+Extension.swift in Sources */,
 				98A2251029BF886300695A71 /* UIColor+Extension.swift in Sources */,
 				98BD059229C03ECA008AA6DB /* AuthViewController.swift in Sources */,
+				7FDB3F7829C05C8D0020868A /* MainPageView.swift in Sources */,
+				7FDB3F7A29C05CB00020868A /* TabbarController.swift in Sources */,
 				98A2250329BF40ED00695A71 /* AppCoordinator.swift in Sources */,
 				98BD059629C03EF0008AA6DB /* AuthPresenter.swift in Sources */,
 				98A2250629BF41B700695A71 /* OnboardingViewController.swift in Sources */,
+				7FDB3F7629C05C840020868A /* MainPagePresenter.swift in Sources */,
 				98BD058F29BFA22F008AA6DB /* AnimateableButton.swift in Sources */,
+				7FDB3F7429C05C750020868A /* MainPageController.swift in Sources */,
 				98A2250829BF433200695A71 /* OnboardingPresenter.swift in Sources */,
 				981048C429C0954900BE6A31 /* AnimateableTextField.swift in Sources */,
 				98A2250A29BF629700695A71 /* OnboardingView.swift in Sources */,
+				7FDB3F7C29C0746E0020868A /* NavigationBar.swift in Sources */,
 				98A224CF29BF2C2F00695A71 /* AppDelegate.swift in Sources */,
 				98BD059429C03EDB008AA6DB /* AuthView.swift in Sources */,
 				98A224D129BF2C2F00695A71 /* SceneDelegate.swift in Sources */,
@@ -537,7 +565,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FLNFW6KP2S;
+				DEVELOPMENT_TEAM = 9W6JC38Q8B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Furnis/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -565,7 +593,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FLNFW6KP2S;
+				DEVELOPMENT_TEAM = 9W6JC38Q8B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Furnis/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
