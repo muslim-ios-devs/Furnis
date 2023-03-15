@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		981048C429C0954900BE6A31 /* AnimateableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981048C329C0954900BE6A31 /* AnimateableTextField.swift */; };
 		7FDB3F7429C05C750020868A /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB3F7329C05C750020868A /* MainPageController.swift */; };
 		7FDB3F7629C05C840020868A /* MainPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB3F7529C05C840020868A /* MainPagePresenter.swift */; };
 		7FDB3F7829C05C8D0020868A /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB3F7729C05C8D0020868A /* MainPageView.swift */; };
 		7FDB3F7A29C05CB00020868A /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB3F7929C05CB00020868A /* TabbarController.swift */; };
 		7FDB3F7C29C0746E0020868A /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB3F7B29C0746E0020868A /* NavigationBar.swift */; };
+		981048C429C0954900BE6A31 /* AnimateableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981048C329C0954900BE6A31 /* AnimateableTextField.swift */; };
 		98A224CF29BF2C2F00695A71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A224CE29BF2C2F00695A71 /* AppDelegate.swift */; };
 		98A224D129BF2C2F00695A71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A224D029BF2C2F00695A71 /* SceneDelegate.swift */; };
 		98A224D829BF2C3100695A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A224D729BF2C3100695A71 /* Assets.xcassets */; };
@@ -51,12 +51,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		981048C329C0954900BE6A31 /* AnimateableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateableTextField.swift; sourceTree = "<group>"; };
 		7FDB3F7329C05C750020868A /* MainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageController.swift; sourceTree = "<group>"; };
 		7FDB3F7529C05C840020868A /* MainPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPagePresenter.swift; sourceTree = "<group>"; };
 		7FDB3F7729C05C8D0020868A /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		7FDB3F7929C05CB00020868A /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		7FDB3F7B29C0746E0020868A /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		981048C329C0954900BE6A31 /* AnimateableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateableTextField.swift; sourceTree = "<group>"; };
+		981048C529C1766600BE6A31 /* Furnis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Furnis.entitlements; sourceTree = "<group>"; };
 		98A224CB29BF2C2F00695A71 /* Furnis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Furnis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A224CE29BF2C2F00695A71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98A224D029BF2C2F00695A71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +140,7 @@
 		98A224CD29BF2C2F00695A71 /* Furnis */ = {
 			isa = PBXGroup;
 			children = (
+				981048C529C1766600BE6A31 /* Furnis.entitlements */,
 				98A224FE29BF345000695A71 /* App */,
 				98A2250E29BF849D00695A71 /* Extensions */,
 				98BD058D29BFA1E6008AA6DB /* Components */,
@@ -563,9 +565,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Furnis/Furnis.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9W6JC38Q8B;
+				DEVELOPMENT_TEAM = FLNFW6KP2S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Furnis/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -591,9 +594,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Furnis/Furnis.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9W6JC38Q8B;
+				DEVELOPMENT_TEAM = FLNFW6KP2S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Furnis/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
