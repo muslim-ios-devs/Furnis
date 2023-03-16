@@ -19,4 +19,8 @@ extension UIColor {
     class var lineColor: UIColor {
         UIColor(named: "lineColor")!
     }
+    
+    class var productBackground: UIColor {
+        UIColor(named: "productBackground")!
+    }
 }
