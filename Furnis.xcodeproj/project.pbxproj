@@ -13,6 +13,7 @@
 		7FDB3F7A29C05CB00020868A /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB3F7929C05CB00020868A /* TabbarController.swift */; };
 		7FDB3F7C29C0746E0020868A /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB3F7B29C0746E0020868A /* NavigationBar.swift */; };
 		981048C429C0954900BE6A31 /* AnimateableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981048C329C0954900BE6A31 /* AnimateableTextField.swift */; };
+		981048C829C1F07B00BE6A31 /* UITapGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981048C729C1F07B00BE6A31 /* UITapGestureRecognizer+Extension.swift */; };
 		98A224CF29BF2C2F00695A71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A224CE29BF2C2F00695A71 /* AppDelegate.swift */; };
 		98A224D129BF2C2F00695A71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A224D029BF2C2F00695A71 /* SceneDelegate.swift */; };
 		98A224D829BF2C3100695A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A224D729BF2C3100695A71 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		7FDB3F7B29C0746E0020868A /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		981048C329C0954900BE6A31 /* AnimateableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateableTextField.swift; sourceTree = "<group>"; };
 		981048C529C1766600BE6A31 /* Furnis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Furnis.entitlements; sourceTree = "<group>"; };
+		981048C729C1F07B00BE6A31 /* UITapGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
 		98A224CB29BF2C2F00695A71 /* Furnis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Furnis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A224CE29BF2C2F00695A71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98A224D029BF2C2F00695A71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			children = (
 				98A2250F29BF886300695A71 /* UIColor+Extension.swift */,
 				98A2251129BF887700695A71 /* UILabel+Extension.swift */,
+				981048C729C1F07B00BE6A31 /* UITapGestureRecognizer+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				98BD059229C03ECA008AA6DB /* AuthViewController.swift in Sources */,
 				7FDB3F7829C05C8D0020868A /* MainPageView.swift in Sources */,
 				7FDB3F7A29C05CB00020868A /* TabbarController.swift in Sources */,
+				981048C829C1F07B00BE6A31 /* UITapGestureRecognizer+Extension.swift in Sources */,
 				98A2250329BF40ED00695A71 /* AppCoordinator.swift in Sources */,
 				98BD059629C03EF0008AA6DB /* AuthPresenter.swift in Sources */,
 				98A2250629BF41B700695A71 /* OnboardingViewController.swift in Sources */,
