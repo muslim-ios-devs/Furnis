@@ -68,7 +68,8 @@ final class OnboardingView: UIView {
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 16, weight: .semibold),
             .paragraphStyle: paragraphStyle,
-            .foregroundColor: UIColor.white
+            .foregroundColor: UIColor.white,
+            .kern: 1.0
         ]
         let attributedString = NSAttributedString(
             string: "GET STARTED", attributes: attributes
