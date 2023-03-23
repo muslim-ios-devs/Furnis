@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class FeaturedProductCollectionViewCell: UICollectionViewCell {
+final class FeaturedProductCollectionViewCell: UICollectionViewCell {
     
     // MARK: PROPERTIES -
     static let cellIdentifier = "FeaturedProductCollectionViewCell"
@@ -18,62 +18,74 @@ class FeaturedProductCollectionViewCell: UICollectionViewCell {
             guard let cellData = cellData else { return }
             productImage.image = UIImage(named: cellData.image)
             productName.text = cellData.producttName
-            oldPrice.text = cellData.oldPrice
-            currentPrice.text = cellData.currentPirce
+            oldPrice.text = "$" + cellData.oldPrice
+            currentPrice.text = "$" + cellData.currentPirce
         }
     }
-    let containerView: UIView = {
+    
+    private let containerView: UIView = {
         let v = UIView()
-        v.translatesAutoresizingMaskIntoConstraints = false
         v.backgroundColor = .white
-        
         return v
     }()
     
     let productImage: UIImageView = {
         let img = UIImageView()
-        img.translatesAutoresizingMaskIntoConstraints = false
         img.contentMode = .scaleAspectFit
         img.clipsToBounds = true
         img.layer.cornerRadius = 20
         return img
     }()
     
-    let productName: UILabel = {
+    private let productName: UILabel = {
         let l = UILabel()
-        l.translatesAutoresizingMaskIntoConstraints = false
         l.text = "Product Name"
-        l.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        l.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         l.textColor = .label
         l.textAlignment = .left
         return l
     }()
     
-    let imageContainerView: UIView = {
+    private let imageContainerView: UIView = {
         let v = UIView()
-        v.translatesAutoresizingMaskIntoConstraints = false
         v.backgroundColor = UIColor.productBackground
         v.layer.cornerRadius = 5
         v.clipsToBounds = true
         return v
     }()
     
-    let oldPrice: UILabel = {
+    let heartButton: UIButton = {
+        let b = UIButton()
+        b.setImage(UIImage(named: "heart"), for: .normal)
+        return b
+    }()
+    
+    let saleButton: UIButton = {
+        let b = UIButton()
+        b.setImage(UIImage(named: "sale"), for: .normal)
+        return b
+    }()
+    
+    let plusButton: UIButton = {
+        let b = UIButton()
+        b.setImage(UIImage(named: "plus"), for: .normal)
+        return b
+    }()
+    
+    private let oldPrice: UILabel = {
         let l = UILabel()
-        l.translatesAutoresizingMaskIntoConstraints = false
-        l.text = "120"
-        l.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        l.textColor = .label
+        l.attributedText = "120".strikeThrough()
+        l.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        l.textColor = #colorLiteral(red: 0.3999999762, green: 0.3999999762, blue: 0.3999999762, alpha: 1)
         l.textAlignment = .left
         l.numberOfLines = 0
         return l
     }()
     
-    let currentPrice: UILabel = {
+    private let currentPrice: UILabel = {
         let l = UILabel()
-        l.translatesAutoresizingMaskIntoConstraints = false
         l.text = "100"
-        l.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        l.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         l.textColor = .label
         l.textAlignment = .left
         l.numberOfLines = 0
@@ -82,7 +94,6 @@ class FeaturedProductCollectionViewCell: UICollectionViewCell {
     
     private let pricesStackView: UIStackView = {
         let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
         stack.alignment = .fill
         stack.axis = .horizontal
         stack.spacing = 4
@@ -93,7 +104,6 @@ class FeaturedProductCollectionViewCell: UICollectionViewCell {
     
     private let priceAndNameStackView: UIStackView = {
         let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
         stack.alignment = .fill
         stack.axis = .vertical
         stack.spacing = 4
@@ -118,10 +128,13 @@ class FeaturedProductCollectionViewCell: UICollectionViewCell {
     
     // MARK: FUNCTIONS -
     
-    func setUpViews(){
+    private func setUpViews(){
         addSubview(containerView)
         containerView.addSubview(imageContainerView)
         imageContainerView.addSubview(productImage)
+        imageContainerView.addSubview(heartButton)
+        imageContainerView.addSubview(saleButton)
+        imageContainerView.addSubview(plusButton)
         containerView.addSubview(priceAndNameStackView)
         priceAndNameStackView.addArrangedSubview(productName)
         priceAndNameStackView.addArrangedSubview(pricesStackView)
@@ -132,7 +145,7 @@ class FeaturedProductCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func setUpConstraints(){
+    private func setUpConstraints(){
         containerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -140,6 +153,22 @@ class FeaturedProductCollectionViewCell: UICollectionViewCell {
         imageContainerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        heartButton.snp.makeConstraints { make in
+            make.top.equalTo(imageContainerView.snp.top).offset(12)
+            make.right.equalTo(imageContainerView.snp.right).offset(-12)
+        }
+        
+        saleButton.snp.makeConstraints { make in
+            make.left.equalTo(imageContainerView.snp.left).offset(6)
+            make.bottom.equalTo(imageContainerView.snp.bottom).offset(-6)
+        }
+        
+        plusButton.snp.makeConstraints { make in
+            make.bottom.equalTo(imageContainerView.snp.bottom).offset(-6)
+            make.right.equalTo(imageContainerView.snp.right).offset(-12)
+        }
+        
         productImage.snp.makeConstraints { make in
             make.top.equalTo(imageContainerView.snp.top).offset(12)
             make.bottom.equalTo(imageContainerView.snp.bottom).offset(12)

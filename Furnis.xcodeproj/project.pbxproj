@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F119A3F29CC7F2700946844 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F119A3E29CC7F2700946844 /* String + Extension.swift */; };
 		7F1F246B29C2F3DE007938B7 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1F246A29C2F3DE007938B7 /* BannerCollectionViewCell.swift */; };
 		7F1F246D29C2F428007938B7 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1F246C29C2F428007938B7 /* UIView + Extension.swift */; };
 		7F1F247029C30207007938B7 /* AppLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1F246F29C30207007938B7 /* AppLayouts.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F119A3E29CC7F2700946844 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		7F1F246A29C2F3DE007938B7 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		7F1F246C29C2F428007938B7 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		7F1F246F29C30207007938B7 /* AppLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayouts.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				98A2250F29BF886300695A71 /* UIColor+Extension.swift */,
 				98A2251129BF887700695A71 /* UILabel+Extension.swift */,
 				7F1F246C29C2F428007938B7 /* UIView + Extension.swift */,
+				7F119A3E29CC7F2700946844 /* String + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				7F1F247929C3068E007938B7 /* FeaturedProductDM.swift in Sources */,
 				98A2250A29BF629700695A71 /* OnboardingView.swift in Sources */,
 				7F1F247729C30650007938B7 /* FeaturedProductsCollectionViewCell.swift in Sources */,
+				7F119A3F29CC7F2700946844 /* String + Extension.swift in Sources */,
 				7F1F247029C30207007938B7 /* AppLayouts.swift in Sources */,
 				7FDB3F7C29C0746E0020868A /* NavigationBar.swift in Sources */,
 				98A224CF29BF2C2F00695A71 /* AppDelegate.swift in Sources */,

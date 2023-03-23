@@ -7,13 +7,12 @@
 
 import UIKit
 
-class FeaturedSectionHeaderView: UICollectionReusableView {
+final class FeaturedSectionHeaderView: UICollectionReusableView {
     
     // MARK: PROPERTIES -
     static let headerIdentifier = "FeaturedSectionHeaderView"
 
-    
-    let title: UILabel = {
+    private let title: UILabel = {
         let l = UILabel()
         l.translatesAutoresizingMaskIntoConstraints = false
         l.textColor = .label
@@ -30,7 +29,6 @@ class FeaturedSectionHeaderView: UICollectionReusableView {
         b.tintColor = .label
         b.setTitleColor(UIColor.secondary, for: .normal)
         b.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        b.addTarget(self, action: #selector(viewAllTapped), for: .touchUpInside)
         return b
     }()
     
@@ -59,20 +57,16 @@ class FeaturedSectionHeaderView: UICollectionReusableView {
     
     // MARK: FUNCTIONS -
     
-    func setUpViews(){
+   private func setUpViews(){
         backgroundColor = .clear
         addSubview(stackView)
         stackView.addArrangedSubview(title)
         stackView.addArrangedSubview(viewAllButton)
     }
     
-    func setUpConstraints(){
+    private func setUpConstraints(){
         stackView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-    }
-    
-    @objc private func viewAllTapped() {
-        print("vieall tapped")
     }
 }

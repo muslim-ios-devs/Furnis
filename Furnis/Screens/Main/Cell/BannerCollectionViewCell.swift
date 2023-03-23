@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BannerTopCollectionViewCell: UICollectionViewCell {
+final class BannerTopCollectionViewCell: UICollectionViewCell {
     
     //MARK: Properities
     
@@ -49,7 +49,7 @@ class BannerTopCollectionViewCell: UICollectionViewCell {
         configure()
     }
     
-    func configure(){
+    private func configure(){
         contentView.backgroundColor = .clear
         addSubview(shadowView)
         shadowView.addSubview(bannerImage)

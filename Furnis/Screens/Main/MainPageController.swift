@@ -37,6 +37,28 @@ final class MainPageController: UIViewController {
     }
 }
 
+//collection view buttons
+extension MainPageController {
+    
+    //FeaturedSectionHeaderView button
+    @objc private func viewAllTapped() {
+        print("vieall tapped")
+    }
+    
+    //FeaturedProductCollectionViewCell buttons
+    @objc private func heartTapped() {
+        print("heartTapped tapped")
+    }
+    
+    @objc private func saleTapped() {
+        print("saleTapped tapped")
+    }
+    
+    @objc private func plusTapped() {
+        print("plusTapped tapped")
+    }
+}
+
 extension MainPageController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
@@ -61,7 +83,11 @@ extension MainPageController: UICollectionViewDelegate, UICollectionViewDataSour
             
         default:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedProductCollectionViewCell.cellIdentifier, for: indexPath) as? FeaturedProductCollectionViewCell else {fatalError("Unable deque cell...")}
-             cell.cellData = featuredProductData[indexPath.row]
+            cell.cellData = featuredProductData[indexPath.row]
+            cell.saleButton.addTarget(self, action: #selector(saleTapped), for: .touchUpInside)
+            cell.heartButton.addTarget(self, action: #selector(heartTapped), for: .touchUpInside)
+            cell.plusButton.addTarget(self, action: #selector(plusTapped), for: .touchUpInside)
+            
              return cell
         }
     }
@@ -77,6 +103,7 @@ extension MainPageController: UICollectionViewDelegate, UICollectionViewDataSour
                 print("ss")
             default :
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FeaturedSectionHeaderView.headerIdentifier, for: indexPath) as! FeaturedSectionHeaderView
+                header.viewAllButton.addTarget(self, action: #selector(viewAllTapped), for: .touchUpInside)
                 return header
             }
             
