@@ -33,6 +33,7 @@ final class AuthView: UIView {
     private let nameField: AnimateableTextField = {
         let field = AnimateableTextField()
         field.placeholder = "Name"
+        field.fieldType = .email
         field.textContentType = .name
         field.keyboardType = .asciiCapable
         field.autocorrectionType = .no
@@ -42,6 +43,7 @@ final class AuthView: UIView {
     private let emailField: AnimateableTextField = {
         let field = AnimateableTextField()
         field.placeholder = "Email"
+        field.fieldType = .email
         field.textContentType = .username
         field.keyboardType = .emailAddress
         field.autocorrectionType = .no
@@ -51,20 +53,22 @@ final class AuthView: UIView {
     private let passwordField: AnimateableTextField = {
         let field = AnimateableTextField()
         field.placeholder = "Password"
+        field.isSecureTextEntry = true
+        field.fieldType = .secure
         field.textContentType = .newPassword
         field.autocorrectionType = .no
         field.autocapitalizationType = .none
-        field.isSecureTextEntry = true
         return field
     }()
     
     private let confirmPasswordField: AnimateableTextField = {
         let field = AnimateableTextField()
         field.placeholder = "Confirm password"
+        field.isSecureTextEntry = true
+        field.fieldType = .secure
         field.textContentType = .newPassword
         field.autocorrectionType = .no
         field.autocapitalizationType = .none
-        field.isSecureTextEntry = true
         return field
     }()
     
