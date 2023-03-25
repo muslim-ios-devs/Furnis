@@ -18,9 +18,25 @@ private enum Constants {
 
 final class AnimateableTextField: UITextField {
     
+    enum FieldType {
+        case secure, email, name, none
+    }
+    
+    var fieldType: FieldType = .none {
+        didSet {
+            setupRightView()
+        }
+    }
+    
     // MARK: - Subviews
     private let label = UILabel()
     private let borderView = UIView()
+    
+    private lazy var iconView: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
     
     // MARK: - Private Properties
     private var scale: CGFloat {
@@ -44,7 +60,11 @@ final class AnimateableTextField: UITextField {
     }
     
     private var textInsets: UIEdgeInsets {
-        UIEdgeInsets(top: Constants.offset, left: 10, bottom: Constants.offset, right: 10)
+        UIEdgeInsets(top: Constants.offset, left: 10, bottom: Constants.offset, right: 60)
+    }
+    
+    private var contentHeight: CGFloat {
+        textInsets.top + textHeight + textInsets.bottom
     }
     
     // MARK: - Initialization
@@ -60,7 +80,7 @@ final class AnimateableTextField: UITextField {
     
     // MARK: - UITextField
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: bounds.width, height: textInsets.top + textHeight + textInsets.bottom)
+        return CGSize(width: bounds.width, height: contentHeight)
     }
     
     override var placeholder: String? {
@@ -130,6 +150,28 @@ final class AnimateableTextField: UITextField {
         addSubview(label)
         
         addTarget(self, action: #selector(handleEditing), for: .allEditingEvents)
+    }
+    
+    private func setupRightView() {
+        let customRightView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: contentHeight))
+        iconView.center = customRightView.center
+        if fieldType == .secure {
+            iconView.image = isSecureTextEntry ? UIImage(named: "show-icon") : UIImage(named: "hide-icon")
+        } else {
+            iconView.image = UIImage(named: "check")
+        }
+        customRightView.addSubview(iconView)
+        let rightViewTapGesture = UITapGestureRecognizer(target: self, action: #selector(rightViewTapped))
+        customRightView.addGestureRecognizer(rightViewTapGesture)
+        rightView = customRightView
+        rightViewMode = .always
+    }
+    
+    @objc private func rightViewTapped() {
+        becomeFirstResponder()
+        guard fieldType == .secure else { return }
+        isSecureTextEntry.toggle()
+        iconView.image = isSecureTextEntry ? UIImage(named: "show-icon") : UIImage(named: "hide-icon")
     }
     
     @objc private func handleEditing() {

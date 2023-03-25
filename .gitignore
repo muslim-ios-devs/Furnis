@@ -15,6 +15,6 @@ fastlane/report.xml
 *.mode2v3
 *.perspectivev3
 *.xcuserstate
-SS-Director.xcworkspace/
+*.xcworkspace/
 xcuserdata/
 xcschememanagement.plist
