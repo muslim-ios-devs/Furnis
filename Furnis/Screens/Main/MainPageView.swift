@@ -22,10 +22,22 @@ class MainPageView: UIView {
         return view
     }()
     
+     var collectionView : UICollectionView = {
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.showsVerticalScrollIndicator = false
+        cv.register(BannerTopCollectionViewCell.self, forCellWithReuseIdentifier: BannerTopCollectionViewCell.cellIdentifier)
+        cv.register(FeaturedProductCollectionViewCell.self, forCellWithReuseIdentifier: FeaturedProductCollectionViewCell.cellIdentifier)
+         cv.register(FeaturedSectionHeaderView.self, forSupplementaryViewOfKind: "Header", withReuseIdentifier: FeaturedSectionHeaderView.headerIdentifier)
+        cv.backgroundColor = .systemBackground
+        return cv
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupNavigationView()
         setupConteinerView()
+        setupCollectionView()
     }
     
     required init?(coder: NSCoder) {
@@ -46,6 +58,13 @@ class MainPageView: UIView {
         conteinrView.snp.makeConstraints { make in
             make.top.equalTo(navigationView.snp.bottom)
             make.left.right.bottom.equalToSuperview()
+        }
+    }
+    
+    private func setupCollectionView() {
+        conteinrView.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
     }
     
