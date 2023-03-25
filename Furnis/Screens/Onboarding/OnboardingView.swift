@@ -10,6 +10,8 @@ import SnapKit
 
 final class OnboardingView: UIView {
 
+    var startButtonTappedClosure: (() -> Void)?
+    
     private let descriptions: [String] = [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu.",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur commodo.",
@@ -56,7 +58,6 @@ final class OnboardingView: UIView {
         control.numberOfPages = 3
         control.allowsContinuousInteraction = false
         control.backgroundStyle = .minimal
-        control.addTarget(self, action: #selector(sliderControlChanged), for: .valueChanged)
         return control
     }()
     
@@ -67,7 +68,8 @@ final class OnboardingView: UIView {
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 16, weight: .semibold),
             .paragraphStyle: paragraphStyle,
-            .foregroundColor: UIColor.white
+            .foregroundColor: UIColor.white,
+            .kern: 1.0
         ]
         let attributedString = NSAttributedString(
             string: "GET STARTED", attributes: attributes
@@ -135,6 +137,7 @@ final class OnboardingView: UIView {
     }
     
     private func setupSliderControl() {
+        sliderControl.addTarget(self, action: #selector(sliderControlChanged), for: .valueChanged)
         addSubview(sliderControl)
         sliderControl.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(28)
@@ -143,6 +146,7 @@ final class OnboardingView: UIView {
     }
     
     private func setupStartButton() {
+        startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         addSubview(startButton)
         startButton.snp.makeConstraints { make in
             make.height.equalTo(50)
@@ -152,20 +156,14 @@ final class OnboardingView: UIView {
     }
     
     @objc private func swipedLeft() {
-        if selectedDescriptionIndex + 1 > descriptions.count - 1 {
-            selectedDescriptionIndex = 0
-        } else {
-            selectedDescriptionIndex += 1
-        }
+        let isLast = selectedDescriptionIndex + 1 >= descriptions.count
+        selectedDescriptionIndex = isLast ? 0 : selectedDescriptionIndex + 1
         updateDescription()
     }
     
     @objc private func swipedRight() {
-        if selectedDescriptionIndex - 1 < 0 {
-            selectedDescriptionIndex = descriptions.count - 1
-        } else {
-            selectedDescriptionIndex -= 1
-        }
+        let isFirst = selectedDescriptionIndex - 1 < 0
+        selectedDescriptionIndex = isFirst ? descriptions.count - 1 : selectedDescriptionIndex - 1
         updateDescription()
     }
     
@@ -176,7 +174,9 @@ final class OnboardingView: UIView {
         }
     }
     
-    
+    @objc private func startButtonTapped() {
+        startButtonTappedClosure?()
+    }
     
     private func updateDescription() {
         UIView.transition(with: descriptionLabel, duration: 0.3, options: [.transitionCrossDissolve]) {
