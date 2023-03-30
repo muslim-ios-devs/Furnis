@@ -10,6 +10,8 @@ import SnapKit
 
 final class AuthView: UIView {
 
+    var signInTextTapped: (() -> Void)?
+    
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     
@@ -93,7 +95,25 @@ final class AuthView: UIView {
     
     private let signInLabel: UILabel = {
         let label = UILabel()
-        label.attributedText = NSAttributedString(string: "Already have an account? Sign in.")
+        let mainAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.main.withAlphaComponent(0.7),
+        ]
+        let attributedText = NSMutableAttributedString(
+            string: "Already have an account?", attributes: mainAttributes
+        )
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.1
+        let secondaryAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.main,
+            .font: UIFont.systemFont(ofSize: 16, weight: .medium),
+            .kern: 1.0,
+            .paragraphStyle: paragraphStyle
+        ]
+        let clickableAttributedText = NSAttributedString(
+            string: " Sign in.", attributes: secondaryAttributes
+        )
+        attributedText.append(clickableAttributedText)
+        label.attributedText = attributedText
         label.isUserInteractionEnabled = true
         return label
     }()
@@ -120,8 +140,10 @@ final class AuthView: UIView {
 
 extension AuthView {
     @objc private func signInLabelTapped(_ sender: UITapGestureRecognizer) {
-        guard sender.didTapAttributedString("Sign in", in: signInLabel) else { return }
-        print("signInTapped")
+        print("before:signInTapped")
+        guard sender.didTapAttributedString(" Sign in.", in: signInLabel) else { return }
+        print("after:signInTapped")
+        signInTextTapped?()
     }
 }
 

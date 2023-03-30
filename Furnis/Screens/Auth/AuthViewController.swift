@@ -24,6 +24,12 @@ final class AuthViewController: UIViewController {
     
     override func loadView() {
         view = authView
+        authView.signInTextTapped = { [weak self] in
+            let alertVC = UIAlertController(title: "sign in", message: nil, preferredStyle: .alert)
+            self?.present(alertVC, animated: true) {
+                self?.dismiss(animated: true)                
+            }
+        }
     }
     
     override func viewDidLoad() {
