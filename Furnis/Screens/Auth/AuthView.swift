@@ -10,7 +10,8 @@ import SnapKit
 
 final class AuthView: UIView {
 
-    var signInTextTapped: (() -> Void)?
+    var signInTextTappedClosure: (() -> Void)?
+    var signUpButtonTappedClosure: (() -> Void)?
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
@@ -143,7 +144,7 @@ extension AuthView {
         print("before:signInTapped")
         guard sender.didTapAttributedString(" Sign in.", in: signInLabel) else { return }
         print("after:signInTapped")
-        signInTextTapped?()
+        signInTextTappedClosure?()
     }
 }
 
@@ -210,6 +211,7 @@ extension AuthView {
     }
     
     private func setupSignUpButton() {
+        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         contentView.addSubview(signUpButton)
         signUpButton.snp.makeConstraints { make in
             make.height.equalTo(50)
@@ -227,6 +229,12 @@ extension AuthView {
             make.left.right.equalToSuperview().inset(16)
             make.bottom.equalTo(contentView)
         }
+    }
+}
+
+extension AuthView {
+    @objc private func signUpButtonTapped() {
+        signUpButtonTappedClosure?()
     }
 }
 

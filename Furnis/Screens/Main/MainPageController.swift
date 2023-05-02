@@ -33,6 +33,7 @@ final class MainPageController: UIViewController {
         presenter.setDelegate(mainPageViewDelegate: self)
         mainPageView.collectionView.dataSource = self
         mainPageView.collectionView.delegate = self
+        navigationController?.navigationBar.isHidden = true
         configureCompositionalLayout()
     }
 }
